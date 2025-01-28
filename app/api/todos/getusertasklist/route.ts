@@ -30,7 +30,12 @@ export async function GET(req: NextRequest) {
                 userId:userId
             },
             include:{
-                task:true
+                task:{
+                    orderBy:[
+                        {status:'asc'},
+                        {createdAt:'desc'}
+                    ]
+                }
             }
         })
 
