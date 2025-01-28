@@ -76,9 +76,10 @@ model TODO {
 
 model Task {
   id              String   @id @default(cuid())
-  TodoId          String //foreign key to todo
+  todoId          String //foreign key to todo
   taskDescription String
+  status          Boolean @default(false)
   createdAt       DateTime @default(now())
-  updatedAT       DateTime @updatedAt
-  task            TODO     @relation(fields: [TodoId], references: [id]) // setting up foreign key
+  updatedAt       DateTime @updatedAt
+  task            TODO     @relation(fields: [todoId], references: [id]) // setting up foreign key
 }
