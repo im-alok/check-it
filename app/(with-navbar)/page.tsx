@@ -1,7 +1,8 @@
 export default function(){
   return(
-    <div>
-      Welcome to my todo page
+    <div className="text-white flex justify-center items-center w-full h-full">
+      Todo will be render here
     </div>
+
   )
 }
