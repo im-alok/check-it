@@ -1,13 +1,14 @@
 import { prisma } from "@/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
-async function PUT(req:NextRequest){
+export async function PUT(req:NextRequest){
 
     try {
 
         const {taskId, status} = await req.json();
+        console.log(taskId, status);
 
-        if(!taskId || !status){
+        if(!taskId && !status){
             return NextResponse.json({
                 success:false,
                 message:'Data is missing'

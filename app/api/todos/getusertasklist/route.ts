@@ -44,10 +44,11 @@ export async function GET(req: NextRequest) {
             message: 'User task fetched successfully',
             userTask: userTaskDetails
         }, { status: 200 })
-    } catch (error) {
+    } catch (error:any) {
+        console.log(error)
         return NextResponse.json({
             success: false,
-            message: 'Something went wrong'
+            message: error.message
         }, { status: 500 })
     }
 }

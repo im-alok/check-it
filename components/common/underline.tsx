@@ -1,6 +1,6 @@
 import React from 'react'
 
-function underline({children}:{children : React.ReactNode}){
+function UnderLine({children}:{children : React.ReactNode}){
     return (
         <div className='relative'>
             <div className='absolute inset-x-0 bottom-0 h-[1px] w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent'></div>
@@ -11,4 +11,4 @@ function underline({children}:{children : React.ReactNode}){
     )
 }
 
-export default underline
+export default UnderLine

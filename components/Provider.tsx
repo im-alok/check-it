@@ -2,6 +2,7 @@
 
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
+import { Toaster } from 'react-hot-toast'
 
 const Providers = ({children}:{children:React.ReactNode}) => {
   return (
@@ -14,6 +15,7 @@ const Providers = ({children}:{children:React.ReactNode}) => {
 
     <SessionProvider>
       <div className='relative sm:w-10/12 w-11/12 mx-auto z-10'>
+      <Toaster />
       {children}
       </div>
     </SessionProvider>
