@@ -43,7 +43,7 @@ export async function PUT(req:NextRequest){
 
         return NextResponse.json({
             success:true,
-            message:'updated SuccessFully'
+            message:'done'
 
         })
     } catch (error) {

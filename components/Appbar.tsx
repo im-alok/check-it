@@ -20,8 +20,11 @@ export default function(){
     async function createTodo(){
         try {
             const response = await createNewTodo(session?.data?.user?.id!);
-            if(response.success)
+            if(response.success){
+                toast.success(response?.message)
                 router.refresh()
+            }else{toast.error(response?.message)}
+                
         } catch (error) {
             console.log(error);
         }
@@ -48,7 +51,7 @@ export default function(){
             <Underline>
             <div className="text-white group ">
                 <h1 className="flex items-center gap-2 ">
-                    <span className="sm:text-4xl text-xl font-extrabold font-serif bg-gradient-to-r from-richblue-50 to-richblue-100 text-transparent bg-clip-text "
+                    <span className="xs:text-4xl text-xl font-extrabold font-serif bg-gradient-to-r from-richblue-50 to-richblue-100 text-transparent bg-clip-text "
                     >
                         TaskTracker
                     </span> 
@@ -61,13 +64,17 @@ export default function(){
             </Underline>
 
                 {/* Create TAsk Button */}
-            <div>
-                <Button type="button" onclick={createTodo}
-                customClasses="shadow-[1px_1px_115px_1px_#E7BC5B]"
-                >
-                    Add Task
-                </Button>
-            </div>
+            {
+                session?.data && (
+                    <div>
+                        <Button type="button" onclick={createTodo}
+                        customClasses="shadow-[1px_1px_115px_1px_#E7BC5B]"
+                        >
+                            Add Task
+                        </Button>
+                    </div>
+                )
+            }
 
             {/* Buttons */}
             <div className="">
@@ -95,7 +102,7 @@ export default function(){
                             <Profile session={session}/>
 
                             <Button type="button" onclick={signOut}
-                            customClasses="shadow-[1px_1px_115px_1px_#E7BC5B]"    
+                            customClasses="shadow-[1px_1px_115px_1px_#E7BC5B] hidden xs:flex"    
                             >
                                 Log out
                             </Button>

@@ -21,11 +21,6 @@ export const AUTH_OPTION = {
             clientSecret: process.env.GITHUB_CLIENT_SCERET || "",
             allowDangerousEmailAccountLinking: true // to protect user data from which ever provider they logged in
         }),
-        Facebook({
-            clientId: process.env.FACEBOOK_CLIENT_ID || "",
-            clientSecret: process.env.FACEBOOK_CLIENT_SECRET || "",
-            allowDangerousEmailAccountLinking: true
-        })
     ],
     session: { strategy: "jwt" as SessionStrategy },
     callbacks: {

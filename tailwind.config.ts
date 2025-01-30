@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens:{
+        xs:"500px"
+      },
       colors: {
         white: "#fff",
         black: "#000",

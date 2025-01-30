@@ -36,7 +36,7 @@ export async function DELETE(req:NextRequest){
 
         return NextResponse.json({
             success:true,
-            message:'Task deleted successFully'
+            message:'Task deleted successfully'
         },{status:200})
     } catch (error) {
         return NextResponse.json({

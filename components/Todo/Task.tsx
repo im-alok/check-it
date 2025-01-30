@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React from 'react'
 import TaskDetails from './TaskDetails';
+import { getServerSession } from 'next-auth';
+import { AUTH_OPTION } from '@/lib/auth';
 
 async function getAllTask() {
     try {
@@ -15,7 +17,11 @@ async function getAllTask() {
 }
 
 
-const Task = async () => {
+const  Task = async () => {
+    const session = await getServerSession(AUTH_OPTION);
+    if(!session)
+        return(<div>No details found as user is not logged in</div>)
+
     const data = await getAllTask();
 
     return (

@@ -1,21 +1,25 @@
 import axios from "axios"
 
+const url = process.env.NEXT_PUBLIC_BACKEND_URL
+
 
 
 export async function updateStatus(taskId: string, status: boolean) {
-    console.log(status)
     try {
         const response = await axios.put(
-            `http://localhost:3000/api/todos/update-todos/update-task-status`,
+            `${url}/api/todos/update-todos/update-task-status`,
             {
                 status: status,
                 taskId: taskId
             }
         )
+
+        // console.log(response?.data);
+
         return response?.data
 
     } catch (error: any) {
-        console.log(error)
+        // console.log(error)
         return error?.response
     }
 }
@@ -25,7 +29,7 @@ export async function addTask(todoId:string,taskDescription:string){
     // console.log(process.env.BACKEND_URL)
     try {
         const response = await axios.post(
-            `http://localhost:3000/api/todos/createtask`,
+            `${url}/api/todos/createtask`,
             {
                     todoId: todoId,
                     taskDescription: taskDescription
@@ -42,7 +46,7 @@ export async function addTask(todoId:string,taskDescription:string){
 export async function deleteTask(taskId:string){
     try {
         const response = await axios.delete(
-            `http://localhost:3000/api/todos/delete-task`,
+            `${url}/api/todos/delete-task`,
             {
                 data:{
                     taskId:taskId
@@ -50,8 +54,8 @@ export async function deleteTask(taskId:string){
             })
 
         return response?.data;
-    } catch (error) {
-        console.log(error)
+    } catch (error:any) {
+        return error?.response?.data
     }
 }
 
@@ -59,13 +63,13 @@ export async function deleteTask(taskId:string){
 export async function createNewTodo(userId:string){
     try {
         const response = await axios.post(
-            'http://localhost:3000/api/todos',{
+            `${url}/api/todos`,{
                 userId:userId
             }
         )
 
         return response?.data;
-    } catch (error) {
-        console.log(error)
+    } catch (error: any) {
+        console.log(error?.response?.data)
     }
 }

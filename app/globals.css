@@ -4,8 +4,8 @@
 
 
 @theme {
-    --breakpoint-xs: 500px;
-  }
+  --breakpoint-xs: 30rem;
+}
 
   /* .scrollbar-hidden::-webkit-scrollbar {
     display: none;
