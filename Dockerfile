@@ -8,4 +8,4 @@ RUN npm install
 RUN npm run db:generate
 RUN npm run build
 
-CMD [ "npm","run","dev" ]
+CMD [ "npm","run","start" ]
