@@ -34,5 +34,8 @@ export const AUTH_OPTION = {
         }
     },
     secret: process.env.AUTH_SECRET,
+    pages:{
+        signIn: '/auth',
+    }
 
 }

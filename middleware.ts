@@ -7,7 +7,7 @@ export async function middleware(req:NextRequest) {
   // console.log(token)
 
   // Redirect authenticated users away from sign-in page
-  if (token && pathname === "/api/auth/signin") {
+  if (token && pathname === "/api/auth/signin" || token && pathname === "/auth") {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
@@ -18,5 +18,5 @@ export async function middleware(req:NextRequest) {
 
 // Apply middleware only to these paths
 export const config = {
-  matcher: ["/api/auth/signin"],
+  matcher: ["/api/auth/signin","/auth"],
 };
