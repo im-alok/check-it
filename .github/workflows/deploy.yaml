@@ -28,7 +28,7 @@ jobs:
       - name: verify the push
         run: docker pull imalokk/tasktracker:latest
 
-      - name: push the image to the ec2
+      - name: push the image to the EC2
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST}}
