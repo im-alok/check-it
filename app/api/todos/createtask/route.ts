@@ -41,7 +41,7 @@ export async function POST(req:NextRequest){
             taskDetails
         },{status:200})
 
-    } catch (error) {
+    } catch (_error:any) {
         return NextResponse.json({
             success:false,
             message:'Something went wrong'

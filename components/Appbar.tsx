@@ -3,15 +3,13 @@ import { signIn, signOut, useSession } from "next-auth/react"
 
 import { LuNotebookPen } from "react-icons/lu";
 import Button from "./Button";
-import { NavItems } from "@/lib/data";
-import Link from "next/link";
 import Underline from "./common/underline";
 import Profile from "./Appbar/Profile";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import {createNewTodo} from "@/db/apicalls"
 
-export default function(){
+export default function Appbar(){
 
     const session= useSession();
     const router = useRouter();

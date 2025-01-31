@@ -89,7 +89,7 @@ function Modal({modalData,setModalData}:any){
             
             
 
-        } catch (error) {
+        } catch (_error) {
             // console.log(error);
         }finally{
             setModalData(null);

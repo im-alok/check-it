@@ -103,7 +103,7 @@ function Modal({ data, setAddTask }: any) {
             } else {
                 toast.error(response?.message);
             }
-        } catch (error) {
+        } catch (_error) {
             // console.error("Failed to add task:", error);
         } finally {
             setLoading(false);

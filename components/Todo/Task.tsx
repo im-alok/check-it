@@ -10,7 +10,7 @@ async function getAllTask() {
 
         return response?.data;
 
-    } catch (error: any) {
+    } catch (_error: any) {
         // console.log(error)
         // return error?.response?.data
     }

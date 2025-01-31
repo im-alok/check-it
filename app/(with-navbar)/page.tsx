@@ -4,7 +4,7 @@ import {getServerSession} from 'next-auth'
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
-export  default async function(){
+export  default async function Page(){
 
   const session = await getServerSession();
   if(!session){

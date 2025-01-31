@@ -1,8 +1,6 @@
 import { prisma } from "@/prisma";
 import Github from "next-auth/providers/github"
-import bcrypt from 'bcrypt'
 import Google from "next-auth/providers/google";
-import Facebook from "next-auth/providers/facebook";
 import { Adapter } from "next-auth/adapters";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { SessionStrategy } from "next-auth";

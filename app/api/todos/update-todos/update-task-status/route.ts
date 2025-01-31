@@ -46,7 +46,7 @@ export async function PUT(req:NextRequest){
             message:'done'
 
         })
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({
             success:false,
             message:'Something went wrong'

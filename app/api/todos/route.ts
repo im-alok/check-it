@@ -38,7 +38,7 @@ export async function POST(req:NextRequest){
         })
     
 
-        const headingDetails = await prisma.tODO.create({
+        const _headingDetails = await prisma.tODO.create({
             data:{
                 userId:userDetails?.id,
                 name:name
@@ -51,7 +51,7 @@ export async function POST(req:NextRequest){
             message:'space from adding task created successfully'
         },{status:200})
 
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({
             success:false,
             message:'Something went wrong'

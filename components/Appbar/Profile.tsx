@@ -26,7 +26,7 @@ const Profile = ({session} : {session:any} ) => {
 
 export default Profile
 
-type session ={
+type _session ={
     data:data,
     status: "authenticated" | "unauthenticated" | "loading"
 }

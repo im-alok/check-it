@@ -3,7 +3,6 @@
 import { prisma } from "@/prisma";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { Session } from "node:inspector";
 
 
 declare module 'next-auth' {
@@ -17,7 +16,7 @@ declare module 'next-auth' {
     }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
     try {
         const session = await getServerSession();
 
@@ -44,11 +43,11 @@ export async function GET(req: NextRequest) {
             message: 'User task fetched successfully',
             userTask: userTaskDetails
         }, { status: 200 })
-    } catch (error:any) {
-        console.log(error)
+    } catch (error:unknown) {
+
         return NextResponse.json({
             success: false,
-            message: error.message
+            message: error instanceof Error ? error.message : "else"
         }, { status: 500 })
     }
 }
