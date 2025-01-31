@@ -38,7 +38,7 @@ jobs:
             sudo docker pull imalokk/tasktracker:latest
             sudo docker stop test || true
             sudo docker rm test || true
-            sudo docker run -d --name taskTracker -p 3000:3000 \
+            sudo docker run -d --name taskTracker -p 8080:3000 \
             -e NEXTAUTH_URL=${{secrets.NEXTAUTH_URL}} \
             -e NEXT_PUBLIC_BACKEND_URL=${{secrets.NEXTAUTH_URL}} \
             -e BACKEND_URL=${{secrets.NEXTAUTH_URL}} \
