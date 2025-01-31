@@ -46,6 +46,11 @@ jobs:
             -e NEXTAUTH_SECRET=${{secrets.NEXTAUTH_SECRET}} \
             -e GITHUB_CLIENT_ID=${{secrets.G_CLIENT_ID}} \
             -e GITHUB_CLIENT_SCERET=${{secrets.G_CLIENT_SCERET}} \
-            -e GOOGLE_CLIENT_ID=${{secrets.GOOGLE_CLIENT_ID}}
+            -e GOOGLE_CLIENT_ID=${{secrets.GOOGLE_CLIENT_ID}} \
             -e GOOGLE_CLIENT_SECRET=${{secrets.GOOGLE_CLIENT_SECRET}}
             imalokk/tasktracker:latest
+
+
+
+
+            
