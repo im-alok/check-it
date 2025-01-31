@@ -23,10 +23,10 @@ jobs:
           context: .
           file: /Dockerfile
           push: true
-          tags: imalokk/taskTracker
+          tags: imalokk/tasktracker
 
       - name: verify the push
-        run: docker pull imalokk/taskTracker:latest
+        run: docker pull imalokk/tasktracker:latest
 
       - name: push the image to the ec2
         uses: appleboy/ssh-action@master
@@ -35,7 +35,7 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           key: ${{secrets.SSH_KEY}}
           script: |
-            sudo docker pull imalokk/taskTracker:latest
+            sudo docker pull imalokk/tasktracker:latest
             sudo docker stop test || true
             sudo docker rm test || true
             sudo docker run -d --name taskTracker -p 3000:3000 \
@@ -48,4 +48,4 @@ jobs:
             -e GITHUB_CLIENT_SCERET=${{secrets.G_CLIENT_SCERET}} \
             -e GOOGLE_CLIENT_ID=${{secrets.GOOGLE_CLIENT_ID}}
             -e GOOGLE_CLIENT_SECRET=${{secrets.GOOGLE_CLIENT_SECRET}}
-            imalokk/taskTracker:latest
+            imalokk/tasktracker:latest
