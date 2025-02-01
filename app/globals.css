@@ -7,13 +7,13 @@
   --breakpoint-xs: 30rem;
 }
 
-  /* .scrollbar-hidden::-webkit-scrollbar {
+.scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
   
   .scrollbar-hidden {
     scrollbar-width: none;
-  } */
+  }
  
 
 .custom-scrollbar::-webkit-scrollbar {

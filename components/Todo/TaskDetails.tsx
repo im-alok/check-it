@@ -26,7 +26,7 @@ const TaskDetails = ({ data }: any) => {
 
     return (
         <>
-            <div className='w-full flex flex-col-reverse xs:gap-5 gap-10 '>
+            <div className='w-full flex flex-col-reverse xs:gap-10 gap-10 '>
                 {
                     data?.userTask?.map((todo: any) => (
                         <div key={todo?.id} className='flex gap-3 flex-col'>

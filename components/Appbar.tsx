@@ -19,7 +19,7 @@ export default function Appbar(){
         try {
             const response = await createNewTodo(session?.data?.user?.id!);
             if(response.success){
-                toast.success(response?.message)
+                // toast.success(response?.message)
                 router.refresh()
             }else{toast.error(response?.message)}
                 
@@ -29,27 +29,12 @@ export default function Appbar(){
     }
 
     return(
-        <div className="text-richblack-200 text-lg flex items-center justify-between pt-5">
-            
-            {/* menus */}
-            {/* <div>
-                <ol className="flex gap-10">
-                    {
-                        NavItems?.map((item,key)=>(
-                            <Link href={item.to} key={key} 
-                            className="hover:text-richblack-50 hover:scale-110 transition duration-200 ease-in-out"
-                            >{item.title}</Link>
-                        ))
-                    }
-                </ol>
-            </div> */}
-
-            {/* logo */}
+        <div className="fixed inset-0 w-11/12 text-richblack-200 text-lg flex justify-between pt-5 mx-auto h-fit">
 
             <Underline>
             <div className="text-white group ">
                 <h1 className="flex items-center gap-2 ">
-                    <span className="xs:text-4xl text-xl font-extrabold font-serif bg-gradient-to-r from-richblue-50 to-richblue-100 text-transparent bg-clip-text "
+                    <span className="lg:text-4xl text-xl font-extrabold font-serif bg-gradient-to-r from-richblue-50 to-richblue-100 text-transparent bg-clip-text "
                     >
                         TaskTracker
                     </span> 
@@ -66,7 +51,7 @@ export default function Appbar(){
                 session?.data && (
                     <div>
                         <Button type="button" onclick={createTodo}
-                        customClasses="shadow-[1px_1px_115px_1px_#E7BC5B]"
+                        customClasses="shadow-[1px_1px_20px_5px_#E7BC5B]"
                         >
                             Add Task
                         </Button>
@@ -79,14 +64,9 @@ export default function Appbar(){
                 {
                     !session.data && (
                         <div className="flex justify-between items-center">
-                            {/* <Button type="button" onclick={()=>console.log(session)}
-                            customClasses="shadow-[1px_1px_115px_1px_#E7BC5B]"
-                            >
-                                Sign up
-                            </Button> */}
 
                             <Button type="button" onclick={signIn}
-                            customClasses="shadow-[1px_1px_115px_1px_#E7BC5B]"    
+                            customClasses="shadow-[0px_0px_20px_5px_#E7BC5B]"    
                             >
                                 SignIn
                             </Button>
@@ -100,7 +80,7 @@ export default function Appbar(){
                             <Profile session={session}/>
 
                             <Button type="button" onclick={signOut}
-                            customClasses="shadow-[1px_1px_115px_1px_#E7BC5B] hidden xs:flex"    
+                            customClasses="shadow-[1px_1px_20px_5px_#E7BC5B] hidden xs:flex"    
                             >
                                 Log out
                             </Button>

@@ -30,22 +30,17 @@ const TaskManagement = ({ task }: any) => {
                 <div className={`${task?.status ? 'bg-green-500' : 'bg-red-600'} xs:w-4 xs:h-4 w-2 h-2 rounded-full aspect-square block cursor-pointer hover:scale-150 transition-all duration-1000 ease-in-out`}
                 onClick={()=>setModalData(task)}
                 ></div>
-                <div className={`xs:text-lg text-sm  flex gap-1 items-center`} >
-                    <h2 className='cursor-pointer hidden xs:flex w-[800px] overflow-hidden' onClick={()=>setShowFullTask(task)}>
-                        {task?.taskDescription?.length < 60 ? (task?.taskDescription) : (task?.taskDescription.slice(0,75) + "...")}
+                <div className={`lg:text-lg text-sm  flex gap-1 lg:gap-3 items-center `} >
+                    <h2 className='cursor-pointer w-[150px] xs:w-[200px] sm:w-[280px] md:w-[380px] lg:w-[520px] xl:w-[630px] 2xl:w-[800px] overflow-hidden' onClick={()=>setShowFullTask(task)}>
+                        {task?.taskDescription}
                     </h2>
-                    <h2 className='cursor-pointer flex xs:hidden w-[220px] overflow-hidden'
-                    onClick={()=>setShowFullTask(task)}
-                    >
-                        {task?.taskDescription?.length < 39 ? (task?.taskDescription) : (task?.taskDescription.slice(0,25) + "...")}
-                    </h2>
-                    <span className='text-xs font-normal'>
+                    <span className='text-[7px] font-normal'>
                         ~ {timeFormat(task.createdAt)}
                     </span>
                 </div>
             </div>
 
-            <div className='text-2xl text-richblack-400 cursor-pointer'
+            <div className='text-lg lg:text-2xl text-richblack-400 cursor-pointer'
             onClick={()=>deleteHandler()}
             ><MdOutlineDeleteOutline /></div>
 
@@ -128,7 +123,7 @@ function Modal({modalData,setModalData}:any){
     }
 
     return(
-        <div ref={ref} onClick={(e)=>closeModal(e)} className='w-screen h-screen inset-0 fixed bg-richblack-900 backdrop-blur-md opacity-90 flex justify-center items-center z-[1000]'>
+        <div ref={ref} onClick={(e)=>closeModal(e)} className='w-screen h-screen inset-0 fixed bg-richblack-900 backdrop-blur-lg opacity-90 flex justify-center items-center z-[1000]'>
             <div className='w-[200px] h-[200px] bg-yellow-300 '>
                 <div className='flex flex-col gap-5'>
                     <h2 className='text-center text-wrap w-[200px] h-fit overflow-hidden shadow-sm shadow-black text-black'>Task: {modalData?.taskDescription?.length < 20 ? (modalData?.taskDescription) : (modalData?.taskDescription.slice(0,20) + "...")}</h2>
@@ -160,7 +155,7 @@ function ShowTaskDetails({task,setShowFullTask}:any){
     }
 
     return(
-        <div ref={ref} onClick={(e)=>closeModal(e)} className='w-screen h-screen inset-0 fixed bg-richblack-900 backdrop-blur-md opacity-90 flex justify-center items-center z-[1000]'>
+        <div ref={ref} onClick={(e)=>closeModal(e)} className='w-screen h-screen inset-0 fixed bg-richblack-900 backdrop-blur-lg opacity-90 flex justify-center items-center z-[1000]'>
             <div className='xs:text-4xl text-2xl w-[350px] xs:max-w-[700px] xs:min-h-[300px] p-5 bg-white text-black break-words '>
                 {task?.taskDescription}
             </div>

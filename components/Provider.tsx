@@ -15,7 +15,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   bg-[size:60px_120px] z-0"></div>
 
       <SessionProvider>
-        <div className='relative xs:w-10/12 w-11/12 mx-auto z-10'>
+        <div className='relative z-10'>
           <Toaster />
           {children}
         </div>
