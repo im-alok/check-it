@@ -1,13 +1,13 @@
 import axios from "axios"
 
-const url = process.env.NEXT_PUBLIC_BACKEND_URL
+const url = 'https://todo.alokramranjan.in'
 
 
 
 export async function updateStatus(taskId: string, status: boolean) {
     try {
         const response = await axios.put(
-            `https://todo.alokramranjan.in/api/todos/update-todos/update-task-status`,
+            `${url}/api/todos/update-todos/update-task-status`,
             {
                 status: status,
                 taskId: taskId
@@ -29,7 +29,7 @@ export async function addTask(todoId:string,taskDescription:string){
     // console.log(process.env.BACKEND_URL)
     try {
         const response = await axios.post(
-            `https://todo.alokramranjan.in/api/todos/createtask`,
+            `${url}/api/todos/createtask`,
             {
                     todoId: todoId,
                     taskDescription: taskDescription
@@ -46,7 +46,7 @@ export async function addTask(todoId:string,taskDescription:string){
 export async function deleteTask(taskId:string){
     try {
         const response = await axios.delete(
-            `https://todo.alokramranjan.in/api/todos/delete-task`,
+            `${url}/api/todos/delete-task`,
             {
                 data:{
                     taskId:taskId
@@ -63,7 +63,7 @@ export async function deleteTask(taskId:string){
 export async function createNewTodo(userId:string){
     try {
         const response = await axios.post(
-            `https://todo.alokramranjan.in/api/todos`,{
+            `${url}/api/todos`,{
                 userId:userId
             }
         )
