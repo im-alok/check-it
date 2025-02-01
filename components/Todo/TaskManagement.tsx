@@ -30,7 +30,7 @@ const TaskManagement = ({ task }: any) => {
                 <div className={`${task?.status ? 'bg-green-500' : 'bg-red-600'} xs:w-4 xs:h-4 w-2 h-2 rounded-full aspect-square block cursor-pointer hover:scale-150 transition-all duration-1000 ease-in-out`}
                 onClick={()=>setModalData(task)}
                 ></div>
-                <div className={`lg:text-lg text-xs sm:text-sm  flex gap-1 lg:gap-3 items-center `} >
+                <div className={`lg:text-lg text-sm  flex gap-1 lg:gap-3 items-center `} >
                     <h2 className='cursor-pointer w-[150px] xs:w-[200px] sm:w-[280px] md:w-[380px] lg:w-[520px] xl:w-[630px] 2xl:w-[800px] overflow-hidden' onClick={()=>setShowFullTask(task)}>
                         {task?.taskDescription}
                     </h2>
