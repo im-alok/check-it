@@ -12,7 +12,7 @@ export  default async function Page(){
       <Suspense fallback={<Loading />}>
         <div className="w-full flex flex-col gap-10">
           <Appbar/>
-          <div className="mt-20 max-h-[calc(100vh-8rem)] overflow-x-hidden overflow-y-scroll scrollbar-hidden w-11/12 p-4 mx-auto">
+          <div className="mt-20 max-h-[calc(100vh-8rem)] overflow-x-hidden overflow-y-scroll scrollbar-hidden w-11/12 p-4 mx-auto z-[-10]">
               <Protect><Task /></Protect> 
           </div>
 
