@@ -36,6 +36,19 @@ export async function POST(req:NextRequest){
             month:'long',
             year: 'numeric'
         })
+
+        const todoDetails = await prisma.tODO.findFirst({
+            where:{
+                name:name
+            }
+        })
+
+        if(todoDetails){
+            return NextResponse.json({
+                success:false,
+                message:"can't create, space already exists"
+            })
+        }
     
 
         const _headingDetails = await prisma.tODO.create({
