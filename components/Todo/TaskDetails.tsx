@@ -26,11 +26,11 @@ const TaskDetails = ({ data }: any) => {
 
     return (
         <>
-            <div className='w-full flex flex-col-reverse xs:gap-10 gap-10 '>
+            <div className='w-full flex flex-col-reverse xs:gap-10 gap-10'>
                 {
                     data?.userTask?.map((todo: any) => (
                         <div key={todo?.id} className='flex gap-3 flex-col'>
-                            <div className='w-full relative flex justify-between items-center'>
+                            <div className='w-full flex justify-between items-center'>
                                 <details>
                                     <summary className='xs:text-2xl font-mono cursor-pointer flex xs:justify-evenly xs:items-center'>
                                         {todo.name}

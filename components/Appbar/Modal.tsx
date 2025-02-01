@@ -17,8 +17,8 @@ const Modal = ({data,closeModal}:any) => {
 
 
   return (
-    <div ref={modalRef} onClick={(e)=>modalClick(e)} className='w-screen h-screen fixed inset-0  backdrop-blur-sm flex justify-end z-[1000]'>
-        <div className='w-fit h-fit  p-7 rounded-xl mt-20 mr-5 bg-black flex flex-col gap-10'>
+    <div ref={modalRef} onClick={(e)=>modalClick(e)} className='w-screen h-screen fixed inset-0  backdrop-blur-sm flex justify-end z-[100]'>
+        <div className='w-fit h-fit  p-7 rounded-xl mt-20 mr-5 bg-black flex flex-col gap-10 border-2 border-white'>
             <div>
               <h1 className='text-xs text-white font-bold font-mono'>Name : {data?.user.name}</h1>
               <p className='text-xs text-white font-bold font-mono '>Email: {data?.user?.email}</p>
