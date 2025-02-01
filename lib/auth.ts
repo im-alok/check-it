@@ -10,7 +10,6 @@ export const AUTH_OPTION = {
     adapter: PrismaAdapter(prisma) as Adapter,
     providers: [
         Google({
-            id:"g",
             clientId: process.env.GOOGLE_CLIENT_ID || " ",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
             allowDangerousEmailAccountLinking: true
