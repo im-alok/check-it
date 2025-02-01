@@ -19,7 +19,7 @@ export default function Appbar(){
         try {
             const response = await createNewTodo(session?.data?.user?.id!);
             if(response.success){
-                // toast.success(response?.message)
+                toast.success(response?.message)
                 router.refresh()
             }else{toast.error(response?.message)}
                 
