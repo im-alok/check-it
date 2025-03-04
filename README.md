@@ -1,0 +1,1 @@
+made in Nextjs in order to gets handsOn in next
